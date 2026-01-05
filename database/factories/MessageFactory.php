@@ -18,8 +18,8 @@ class MessageFactory extends Factory
     public function definition(): array
     {
         return [
-           //'conversation_id' => Conversation::inRandomOrder()->first()->id,
-            'sender_id' => User::inRandomOrder()->first()->id,
+          
+            'user_id' => User::inRandomOrder()->first()->id,
             'content' => fake()->sentence(),
             'sent_at' => fake()->dateTimeThisYear(),
             'is_read' => fake()->boolean(),

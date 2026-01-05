@@ -17,14 +17,11 @@ class ConversationFactory extends Factory
      */
     public function definition(): array
     {
-        $buyer = \App\Models\User::inRandomOrder()->first();
-        $seller = \App\Models\User::inRandomOrder()->first();
-        $product = \App\Models\Product::inRandomOrder()->first();
 
         return [
-            'buyer_id' => $buyer ? $buyer->id : User::factory()->create()->id,
-            'seller_id'=> $seller ? $seller->id : User::factory()->create()->id,
-            'product_id'=> $product ? $product->id : Product::factory()->create()->id,
+           
+            'user_id'=>  User::inRandomOrder()->first()->id,
+            'product_id'=>  Product::factory()->create()->id,
         ];
     }
 }
