@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class Product extends Model
+{
+    /** @use HasFactory<\Database\Factories\ProductFactory> */
+    use HasFactory, SoftDeletes;
+
+    protected $fillable = [
+        'name',
+        'description',
+        'price',
+        'image_url',
+        'starter_bid',
+        'bid_start_date',
+        'bid_end_date'
+    ];
+}
